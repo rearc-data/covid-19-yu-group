@@ -1,7 +1,6 @@
 # COVID-19 Severity Prediction Models for Counties and Hospitals | Yu Group (UC Berkeley)
 
 ## DataSet Desciption
-
 Yu Group at UC Berkeley is working to help forecast the severity of the COVID-19 epidemic both for individual counties and individual hospitals. This release contains datasets for the Prediction and a Severity Index models produced by this team.
 
 ## More Information:
@@ -9,7 +8,11 @@ Yu Group at UC Berkeley is working to help forecast the severity of the COVID-19
 - [Dataset License](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-13/COVID.DATA.LIC.AGMT.pdf)
 - [Yu Group | COVID-19 Severity Prediction Homepage](https://pages.semanticscholar.org/coronavirus-research)
 - [Yu Group | GitHub Repository for COVID-19 Severity Prediction](https://github.com/Yu-Group/covid19-severity-prediction)
-- Frequency: Weekly
+- Frequency: Daily
+
+## What's included?
+- County-level Predictions Data (county-predictions.xlsx)
+- COVID Severity Index (severity-index.xlsx)
 
 ## Contact Information
 If you have questions about the source data, please contact a member of [Yu Group](https://www.stat.berkeley.edu/~yugroup/people.html). If you have any questions about the CloudFormation stack, Lambda code or any of the AWS services being used, please contact info@rearc.io.
