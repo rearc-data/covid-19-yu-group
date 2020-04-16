@@ -2,7 +2,7 @@
 
 ## DataSet Desciption
 
-Yu Group at UC Berkeley is working to help forecast the severity of the COVID-19 epidemic both for individual counties and individual hospitals. This release contains both the Prediction Model and a Severity Index datasets produced by the Yu Group.
+Yu Group at UC Berkeley is working to help forecast the severity of the COVID-19 epidemic both for individual counties and individual hospitals. This release contains datasets for the Prediction and a Severity Index models produced by this team.
 
 ## More Information:
 - Source: [Yu Group | UC Berkeley](https://www.stat.berkeley.edu/~yugroup/index.html)  
