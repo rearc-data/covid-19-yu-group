@@ -59,7 +59,7 @@ fi
 #invoking the pre-processing lambda function to create first dataset revision
 echo "invoking the pre-processing lambda function to create first dataset revision"
 LAMBDA_FUNCTION_NAME="source-revision-updates-for-${DATASET_NAME}"
-LAMBDA_FUNCTION_STATUS_CODE=$(aws lambda invoke --function-name $LAMBDA_FUNCTION_NAME --invocation-type "RequestResponse" --payload '{ "test": "event" }' response.json --region $REGION --query 'StatusCode' --output text)
+LAMBDA_FUNCTION_STATUS_CODE=$(aws lambda invoke --function-name $LAMBDA_FUNCTION_NAME --invocation-type "RequestResponse" --payload '{ "test": "event" }' response.json --region $REGION --query 'StatusCode' --output text --cli-binary-format raw-in-base64-out)
 
 #grabbing dataset revision status
 echo "grabbing dataset revision status"
