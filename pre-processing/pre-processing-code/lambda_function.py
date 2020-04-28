@@ -1,9 +1,10 @@
-import pandas as pd
+
 import time
 import json
 from source_data import source_dataset
 import boto3
 import os
+from datetime import date
 
 os.environ['AWS_DATA_PATH'] = '/opt/'
 
@@ -26,8 +27,7 @@ new_s3_key = data_set_name + '/dataset/'
 cfn_template = data_set_name + '/automation/cloudformation.yaml'
 post_processing_code = data_set_name + '/automation/post-processing-code.zip'
 
-# pd.datetime is an alias for datetime.datetime
-today = pd.datetime.today().date()
+today = date.today()
 revision_comment = 'Revision Updates v' + today.strftime('%Y-%m-%d')
 
 if not s3_bucket:
@@ -70,7 +70,7 @@ def start_change_set(describe_entity_response, revision_arn):
 
 
 def lambda_handler(event, context):
-	source_dataset(s3_bucket, new_s3_key)
+	asset_list = source_dataset(s3_bucket, new_s3_key)
 
 	create_revision_response = dataexchange.create_revision(DataSetId=data_set_id)
 	revision_id = create_revision_response['Id']
@@ -85,16 +85,7 @@ def lambda_handler(event, context):
 			'ImportAssetsFromS3': {
 				'DataSetId': data_set_id,
 				'RevisionId': revision_id,
-				'AssetSources': [
-					{
-						'Bucket': s3_bucket,
-						'Key': new_s3_key + 'county-predictions.xlsx'
-					},
-                    {
-						'Bucket': s3_bucket,
-						'Key': new_s3_key + 'severity-index.xlsx'
-					}
-				]
+				'AssetSources': asset_list
 			}
 		}
 	)

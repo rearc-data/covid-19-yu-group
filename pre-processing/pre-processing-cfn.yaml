@@ -21,43 +21,6 @@ Parameters:
     Default: us-east-1
     Description: AWS Region for AWS Data Exchange
 
-Mappings:
-  RegionMap:
-    "eu-north-1":
-       AppId: "arn:aws:serverlessrepo:eu-north-1:697637923817:applications/dataexchangesdk"
-    "ap-south-1":
-       AppId: "arn:aws:serverlessrepo:ap-south-1:697637923817:applications/dataexchangesdk"
-    "eu-west-3":
-       AppId: "arn:aws:serverlessrepo:eu-west-3:697637923817:applications/dataexchangesdk"
-    "eu-west-2":
-       AppId: "arn:aws:serverlessrepo:eu-west-2:697637923817:applications/dataexchangesdk"
-    "eu-west-1":
-       AppId: "arn:aws:serverlessrepo:eu-west-1:697637923817:applications/dataexchangesdk"
-    "ap-northeast-3":
-       AppId: "arn:aws:serverlessrepo:ap-northeast-3:697637923817:applications/dataexchangesdk"
-    "ap-northeast-2":
-       AppId: "arn:aws:serverlessrepo:ap-northeast-2:697637923817:applications/dataexchangesdk"
-    "ap-northeast-1":
-       AppId: "arn:aws:serverlessrepo:ap-northeast-1:697637923817:applications/dataexchangesdk"
-    "sa-east-1":
-       AppId: "arn:aws:serverlessrepo:sa-east-1:697637923817:applications/dataexchangesdk"
-    "ca-central-1":
-       AppId: "arn:aws:serverlessrepo:ca-central-1:697637923817:applications/dataexchangesdk"
-    "ap-southeast-1":
-       AppId: "arn:aws:serverlessrepo:ap-southeast-1:697637923817:applications/dataexchangesdk"
-    "ap-southeast-2":
-       AppId: "arn:aws:serverlessrepo:ap-southeast-2:697637923817:applications/dataexchangesdk"
-    "eu-central-1":
-       AppId: "arn:aws:serverlessrepo:eu-central-1:697637923817:applications/dataexchangesdk"
-    "us-east-1":
-       AppId: "arn:aws:serverlessrepo:us-east-1:697637923817:applications/dataexchangesdk"
-    "us-east-2":
-       AppId: "arn:aws:serverlessrepo:us-east-2:697637923817:applications/dataexchangesdk"
-    "us-west-1":
-       AppId: "arn:aws:serverlessrepo:us-west-1:697637923817:applications/dataexchangesdk"
-    "us-west-2":
-       AppId: "arn:aws:serverlessrepo:us-west-2:697637923817:applications/dataexchangesdk"
-
 Resources:
 # Create an IAM role for Lambda to use
   LambdaRole:
@@ -79,19 +42,10 @@ Resources:
         - arn:aws:iam::aws:policy/AWSMarketplaceSellerFullAccess
       Path: /
 
-  dataexchangesdk:
-    Type: AWS::Serverless::Application
-    Properties:
-      Location:
-        ApplicationId: !FindInMap [RegionMap, !Ref "AWS::Region", AppId]
-        SemanticVersion: 0.0.3
-
 # Create a Lambda function that will update daily revisions to AWS Data Exchange dataset
   LambdaFunction:
     Type: AWS::Lambda::Function
     Properties:
-      Layers:
-        - !GetAtt dataexchangesdk.Outputs.LayerArn
       FunctionName:
         !Join
           - ''
