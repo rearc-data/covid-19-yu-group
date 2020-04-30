@@ -6,9 +6,9 @@ The source code outlining how this product gathers, transforms, revises and publ
 Yu Group at UC Berkeley is working to help forecast the severity of the COVID-19 epidemic both for individual counties and individual hospitals. This release contains datasets for the Prediction and Severity Index models produced by Yu Group.
 
 #### Data Sources
-The datasets included with this resouce are provided in XLSX format.
-- County-level Predictions Data (county-predictions.xlsx)
-- COVID Severity Index (severity-index.xlsx)
+The datasets included with this resouce are provided in XLSX and CSV format.
+- County-level Predictions Data (county-predictions.xlsx, county-predictions.csv)
+- COVID Severity Index (severity-index.xlsx, severity-index.csv)
 
 ## More Information
 - Source: [Yu Group | UC Berkeley](https://www.stat.berkeley.edu/~yugroup/index.html)  
@@ -16,7 +16,7 @@ The datasets included with this resouce are provided in XLSX format.
 - [Yu Group | COVID-19 Severity Prediction Homepage](https://pages.semanticscholar.org/coronavirus-research)
 - [Yu Group | GitHub Repository for COVID-19 Severity Prediction](https://github.com/Yu-Group/covid19-severity-prediction)
 - Frequency: Daily
-- Format: XLSX
+- Formats: XLSX, CSV
 
 ## Contact Details
 - If you find any issues with or have enhancement ideas for this product, open up a GitHub [issue](https://github.com/rearc-data/covid-19-yu-group/issues) and we will gladly take a look at it. Better yet, submit a pull request. Any contributions you make are greatly appreciated :heart:.
