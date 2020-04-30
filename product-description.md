@@ -1,6 +1,6 @@
 # COVID-19 Severity Prediction Models Counties and Hospitals | Yu Group (UC Berkeley)
 
-The source code outlining how this product gathers, transforms, revises and publishes its datasets is avaiable at [https://github.com/rearc-data/covid-19-yu-group](https://github.com/rearc-data/covid-19-yu-group).
+The source code outlining how this product gathers, transforms, revises and publishes its datasets is available at [https://github.com/rearc-data/covid-19-yu-group](https://github.com/rearc-data/covid-19-yu-group).
 
 ## Product Desciption
 Yu Group at UC Berkeley is working to help forecast the severity of the COVID-19 epidemic both for individual counties and individual hospitals. This release contains datasets for the Prediction and Severity Index models produced by Yu Group.
