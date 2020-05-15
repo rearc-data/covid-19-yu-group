@@ -6,7 +6,7 @@
 
 You can subscribe to the AWS Data Exchange product utilizing the automation featured in this repository by visiting [https://aws.amazon.com/marketplace/pp/prodview-px2tvvydirx4o](https://aws.amazon.com/marketplace/pp/prodview-px2tvvydirx4o). 
 
-## Product Desciption
+## Main Overview
 Yu Group at UC Berkeley is working to help forecast the severity of the COVID-19 epidemic both for individual counties and individual hospitals. This release contains datasets for the Prediction and Severity Index models produced by Yu Group.
 
 #### Data Sources
