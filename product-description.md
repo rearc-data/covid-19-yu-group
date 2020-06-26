@@ -12,8 +12,8 @@ The datasets included with this resouce are provided in XLSX and CSV format.
 
 ## More Information
 - Source: [Yu Group | UC Berkeley](https://www.stat.berkeley.edu/~yugroup/index.html)  
-- [Dataset License](https://ai2-semanticscholar-cord-19.s3-us-west-2.amazonaws.com/2020-03-13/COVID.DATA.LIC.AGMT.pdf)
-- [Yu Group | COVID-19 Severity Prediction Homepage](https://pages.semanticscholar.org/coronavirus-research)
+- [Dataset License](https://raw.githubusercontent.com/Yu-Group/covid19-severity-prediction/master/LICENSE)
+- [Yu Group | COVID-19 Severity Prediction Homepage](http://covidseverity.com)
 - [Yu Group | GitHub Repository for COVID-19 Severity Prediction](https://github.com/Yu-Group/covid19-severity-prediction)
 - Frequency: Daily
 - Formats: XLSX, CSV
