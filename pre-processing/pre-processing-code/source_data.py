@@ -19,7 +19,7 @@ def data_to_s3(data):
 		raise Exception('URLError: ', e.reason, data['filename'])
 
 	else:
-		
+
 		file_location = '/tmp/' + data['filename']
 
 		if file_location.endswith('.csv'):
@@ -28,19 +28,19 @@ def data_to_s3(data):
 			with open(file_location, 'w', encoding='utf-8') as f:
 				f.write(csv[2].lower().replace(' ', '_') + '\n')
 				f.write('\n'.join(csv[3:]))
-		
+
 		if file_location.endswith('.xlsx'):
 			with open(file_location, 'wb') as f:
 				f.write(response.read())
 
 		# variables/resources used to upload to s3
-		s3_bucket = os.environ['S3_BUCKET']
-		data_set_name = os.environ['DATA_SET_NAME']
+		s3_bucket = os.environ['ASSET_BUCKET']
+		data_set_name = os.environ['DATASET_NAME']
 		new_s3_key = data_set_name + '/dataset/'
 		s3 = boto3.client('s3')
 
 		s3.upload_file(file_location, s3_bucket, new_s3_key + data['filename'])
-		
+
 		print('Uploaded: ' + data['filename'])
 
 		# deletes to preserve limited space in aws lamdba
